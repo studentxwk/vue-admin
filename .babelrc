@@ -1,0 +1,13 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "plugins": ["babel-plugin-transform-undefined-to-void"],
+  "comments": false,
+  "env":{
+	  "production":{
+	  	 "presets": [["minify", {
+		    "evaluate": false,
+		    "mangle": true
+		  }]]
+	  }
+  }
+}
