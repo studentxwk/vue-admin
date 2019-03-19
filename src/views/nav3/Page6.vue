@@ -783,11 +783,18 @@
 //开始扫描
 
             startScan() {
-
-                if (!window.plus) return;
-
-                scan.start();
-
+                    wx.scanCode({
+                        success: (res) => {
+                            console.log("扫码结果");
+                            console.log(res);
+                            this.setData({
+                                img: res.result
+                            })
+                        },
+                        fail: (res) => {
+                            console.log(res);
+                        }
+                    })
             },
 
 //关闭扫描
